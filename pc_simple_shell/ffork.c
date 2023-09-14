@@ -2,12 +2,6 @@
 
 static int idata = 111;
 
-void errExit(const char *errMsg)
-{
-        perror(errMsg);
-        exit(EXIT_FAILURE);
-}
-
 int main(int argc, char *argv[])
 {
 	int istack = 222;
