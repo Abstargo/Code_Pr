@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "error_functions.h": "c",
+        "tlpi_hdr.h": "c",
+        "*.inc": "c",
+        "get_num.h": "c"
+    }
+}

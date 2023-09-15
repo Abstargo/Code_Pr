@@ -1,7 +1,7 @@
 #include <stdarg.h>
 #include "error_functions.h"
 #include "tlpi_hdr.h"
-#include "ename.c" /* Defines ename and MAX_ENAME */
+#include "ename.c.inc" /* Defines ename and MAX_ENAME */
 #ifdef __GNUC__
 __attribute__ ((__noreturn__))
 #endif
@@ -40,8 +40,7 @@ outputError(Boolean useErr, int err, Boolean flushStdout,
  fputs(buf, stderr);
  fflush(stderr); /* In case stderr is not line-buffered */
 }
-void
-errMsg(const char *format, ...)
+void errMsg(const char *format, ...)
 {
  va_list argList;
  int savedErrno;
@@ -51,8 +50,8 @@ errMsg(const char *format, ...)
  va_end(argList);
  errno = savedErrno;
 }
-void
-errExit(const char *format, ...)
+
+void errExit(const char *format, ...)
 {
  va_list argList;
  va_start(argList, format);
@@ -70,6 +69,7 @@ err_exit(const char *format, ...)
  va_end(argList);
  terminate(FALSE);
 }
+
 void
 errExitEN(int errnum, const char *format, ...)
 {
@@ -79,6 +79,7 @@ errExitEN(int errnum, const char *format, ...)
  va_end(argList);
  terminate(TRUE);
 }
+
 void
 fatal(const char *format, ...)
 {
@@ -88,6 +89,7 @@ fatal(const char *format, ...)
  va_end(argList);
  terminate(TRUE);
 }
+
 void
 usageErr(const char *format, ...)
 {

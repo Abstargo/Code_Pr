@@ -8,9 +8,9 @@
 #include <unistd.h>
 #include <errno.h>
 #include <string.h>
+#include <stdio.h>
 
 #include "get_num.h"
-
 #include "error_functions.h"
 
 typedef enum { FALSE, TRUE } Boolean;
