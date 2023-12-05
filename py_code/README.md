@@ -1,1 +1,1 @@
-This Repo contain the practice I do for Python
+This Repo contains the practice I do for Python
