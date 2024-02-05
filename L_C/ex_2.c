@@ -12,14 +12,17 @@ int main(int argc, char *argv[])
 	printf("You have %d bugs at the imaginary rate \
 of %f .\n", bugs, bug_rate);
 
+	// long is for the big numbers without the comma.
 	long universe_of_defects = 1L * 1024L * 1024L * 1024L;
 	printf("The entire universe has %ld bugs. \n",
 		universe_of_defects);
-
+	
+	// the double is the same as float but for big numbers.
 	double expected_bugs = bugs * bug_rate;
 	printf("You are expected to have %f bugs. \n",
 		expected_bugs);
 
+	// %e means a floating number in scientific notation.
 	double part_of_universe = expected_bugs / universe_of_defects;
 	printf("That is only a %e portion of the universe. \n",
 		part_of_universe);
