@@ -26,7 +26,8 @@ void print_letters(char arg[])
 	for(i = 0; arg[i] != '\0'; i++)
 	{
 		char ch = arg[i];
-
+		// The %d specifier is used to print the ASCII value 
+		// of the character ch.
 		if(can_print_it(ch)) 
 		{
 			printf("'%c' == %d ", ch, ch);
