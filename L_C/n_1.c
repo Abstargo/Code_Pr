@@ -1,4 +1,7 @@
 #include <stdio.h>
+/*
+ * hi
+ */
 
 int j;
 
