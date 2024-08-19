@@ -43,6 +43,7 @@ export default function Login()
                         required
                     />
                 </div>
+	    	<button type="submit">Login</button>
             </form>
             <p>{message}</p>
         </div>
