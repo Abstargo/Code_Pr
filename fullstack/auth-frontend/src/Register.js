@@ -1,13 +1,11 @@
 import React from "react";
 import axios from 'axios';
 
-export default function Register()
-{
+export default function Register() {
     const [username, setUsername] = React.useState('');
     const [email, setEmail] = React.useState('');
     const [password, setPassword] = React.useState('');
     const [message, setMessage] = React.useState('');
-
 
     const handleRegister = async (e) => {
         e.preventDefault();
@@ -18,8 +16,15 @@ export default function Register()
                 password
             });
             setMessage(response.data.msg);
+            setUsername('');
+            setEmail('');
+            setPassword('');
         } catch (error) {
-            setMessage('Error: ' + error.response.data.msg);
+            if (error.response) {
+                setMessage('Error: ' + error.response.data.msg);
+            } else {
+                setMessage('An error occurred. Please try again later.');
+            }
         }
     };
 
