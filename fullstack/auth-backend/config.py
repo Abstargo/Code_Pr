@@ -8,11 +8,14 @@ class Config:
 
 class DevelopmentConfig(Config):
     DEBUG = True
+    SQLALCHEMY_ECHO = True  # Optional: logs SQL queries for debugging purposes
 
 class ProductionConfig(Config):
     DEBUG = False
+    # Optional: add additional production-specific settings here
 
 class TestingConfig(Config):
     TESTING = True
-    SQLALCHEMY_DATABASE_URI = 'sqlite:///:memory:'
+    SQLALCHEMY_DATABASE_URI = 'sqlite:///:memory:'  # In-memory database for testing
     DEBUG = True
+

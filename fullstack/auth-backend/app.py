@@ -1,10 +1,12 @@
-from flask import Flask
+from flask import Flask, request, jsonify
+from flask_cors import CORS
 from config import DevelopmentConfig
 from models import db
 from routes import auth_bp
 from flask_jwt_extended import JWTManager
 
 app = Flask(__name__)
+CORS(app)
 app.config.from_object(DevelopmentConfig)
 
 db.init_app(app)

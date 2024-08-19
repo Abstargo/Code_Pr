@@ -19,3 +19,4 @@ class User(db.Model):
 
     def create_token(self):
         return create_access_token(identity=self.id, expires_delta=datetime.timedelta(days=1))
+
