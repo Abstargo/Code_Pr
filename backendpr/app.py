@@ -29,3 +29,29 @@ class Student(db.Model):
 def index():
     students = Student.query.all()
     return render_template('index.html', students=students)
+
+@app.route('/<int:student_id>/')
+def student(student_id):
+    student = Student.query.get_or_404(student_id)
+    return render_template('student.html', student=student)
+
+@app.route('/create', methods=('GET', 'POST'))
+def create():
+    if request.method == 'POST':
+        firstname = request.form['firstname']
+        lastname = request.form['lastname']
+        email = request.form['email']
+        bio = request.form['bio']
+        age = int(request.form['age'])
+        student = Student(firstname=firstname,
+                        lastname=lastname,
+                        email=email,
+                        age=age,
+                        bio=bio)
+        db.session.add(student)
+        db.session.commit()
+
+        return redirect(url_for('index'))
+
+    return render_template('create.html')
+

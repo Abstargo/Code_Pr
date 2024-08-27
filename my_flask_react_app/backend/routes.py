@@ -1,9 +1,7 @@
 from flask import Blueprint, request, jsonify
-from app import db
-from models import User
+from .models import User
 from flask_jwt_extended import create_access_token
-
-auth_bp = Blueprint('auth_bp', __name__)
+auth_bp = Blueprint('auth', __name__)
 
 @auth_bp.route('/signup', methods=['POST'])
 def signup():
@@ -27,5 +25,6 @@ def signin():
     if not user or not user.check_password(data['password']):
         return jsonify({"msg": "Bad credentials"}), 401
     
-    access_token = create_access_token(identify=user.id)
+    access_token = create_access_token(identity=user.id)
     return jsonify(access_token=access_token), 200
+from . import db
