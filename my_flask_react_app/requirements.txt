@@ -1,0 +1,6 @@
+npm install
+pip install flask
+pip install FLASK-SQLAlchemy
+pip install FLASK-Bcrypt
+pip install FLASK-CORS
+pip install mysql-connector-python

@@ -1,6 +1,8 @@
 from flask import Blueprint, request, jsonify
 from .models import User
 from flask_jwt_extended import create_access_token
+from . import db
+
 auth_bp = Blueprint('auth', __name__)
 
 @auth_bp.route('/signup', methods=['POST'])
@@ -27,4 +29,3 @@ def signin():
     
     access_token = create_access_token(identity=user.id)
     return jsonify(access_token=access_token), 200
-from . import db
