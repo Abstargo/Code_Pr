@@ -39,6 +39,3 @@ def delete_note():
 
 
 
-
-
-
