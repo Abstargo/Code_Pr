@@ -1,23 +1,26 @@
-import React, { useState } from "react";
+import React from "react";
+import Home from "./Home";
 import SignIn from "./SignIn";
 import SignUp from "./SignUp";
+import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 
 function App()
 {
-  const [accessToken, setAccessToken] = useState('');
-
-  function handleclick() {
-    
-  }
 
   return (
     <div className="App">
-      <SignIn setAccessToken={setAccessToken} />
-      <SignUp />
-
-      {accessToken && <h3>Sign in successfully</h3>}
+        <Router>
+          <Routes>
+            <Route exact path="/" Component={Home} />
+            <Route path="/signin" Component={SignIn} />
+            <Route path="/signin/signup" Component={SignUp} />
+          </Routes>
+        </Router> 
     </div>
   )
 }
 
 export default App;
+
+/* <SignIn />
+      <SignUp /> */

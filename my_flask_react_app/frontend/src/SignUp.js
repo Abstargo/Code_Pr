@@ -8,6 +8,8 @@ export default function SignUp()
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     
+    
+    
     const handleSignUp = async () => {
         try {
           const response = await axios.post('http://localhost:5000/signup', {
@@ -28,6 +30,7 @@ export default function SignUp()
       <input placeholder="Email" value={email} onChange={e => setEmail(e.target.value)} />
       <input type="password" placeholder="password" value={password} onChange={e => setPassword(e.target.value)} />
       <button onClick={handleSignUp}>Sign Up</button>
+    
       </>
     )
 }
