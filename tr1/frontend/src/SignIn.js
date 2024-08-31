@@ -14,7 +14,7 @@ function SignIn() {
         navigate('/signup');
       }
     } catch (error) {
-      console.error('Error signing in:', error);
+      console.error('Error signing in:', error.response ? error.response.data : error.message);
     }
   };
 
