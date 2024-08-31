@@ -17,7 +17,7 @@ export default function SignUp()
           });
           alert(response.data.msg);
         } catch (error) {
-          alert(error.response.data.msg);
+          alert(error.response?.data?.msg);
         }
     };
     
