@@ -37,9 +37,9 @@ def signup():
 @app.route('/signin', methods=['POST'])
 def signin():
     data = request.json
-    user = User.query.filter_by(username=data['username'], password=data['password']).first()
-    if user and check_password_hash(user.password, password):
-        return jsonify({"message": "Sign in successful", "token": "fake-jwt-token"}), 200
+    user = User.query.filter_by(username=data['username']).first()
+    if user and check_password_hash(user.password, data['password']):
+        return jsonify({"message": "Sign in successful"}), 200
     else:
         return jsonify({'message': 'Invalid credentials'}), 401
 
