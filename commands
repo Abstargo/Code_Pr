@@ -1,0 +1,19 @@
+commands to look back to :
+sudo nginx -t
+sudo service nginx restart
+curl -sI
+curl -v
+X-Served-By: 440678-web-01 3.89.155.190
+X-Served-By: 440678-web-02 54.208.23.186
+
+sed -i '/504.http/a \\nlisten http-in\n\tbind *:80\n\tmode http\n\tbalance roundrobin\n\tserver 440678-web-01 3.89.155.190:80 check\n\tserver 440678-web-02 54.208.23.186:80 check' /etc/haproxy/haproxy.cfg
+
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys B7B3B788A8D3785C
+
+Mimi21/Kw_8
+ 		
+database_name(Yassir) pss => Abstar_8-8
+
+export FLASK_APP=app.py
+export FLASK_ENV=development
+A8/fK
